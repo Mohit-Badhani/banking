@@ -8,6 +8,20 @@ import { getLoggedInUser } from '@/lib/actions/user.actions';
 const Home = async ({ searchParams: { id, page } }: SearchParamProps) => {
   const currentPage = Number(page as string) || 1;
   const loggedIn = await getLoggedInUser();
+
+  // Check if the user is logged in
+  if (!loggedIn) {
+    // Redirect to login page or return an appropriate response
+    // For example, you might want to return null, an error message, or redirect
+    return (
+      <section className="home">
+        <div className="home-content">
+          <p>Please log in to view this content.</p>
+        </div>
+      </section>
+    );
+  }
+
   const accounts = await getAccounts({ 
     userId: loggedIn.$id 
   })
