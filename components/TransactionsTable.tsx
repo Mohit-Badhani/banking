@@ -27,6 +27,15 @@ const CategoryBadge = ({ category }: CategoryBadgeProps) => {
 } 
 
 const TransactionsTable = ({ transactions }: TransactionTableProps) => {
+  // Ensure transactions is an array before attempting to map
+  if (!transactions || !Array.isArray(transactions)) {
+    return (
+      <div className="p-4">
+        <p>No transactions available</p>
+      </div>
+    )
+  }
+
   return (
     <Table>
       <TableHeader className="bg-[#f9fafb]">
