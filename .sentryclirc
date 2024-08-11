@@ -1,5 +1,5 @@
 [auth]
-token=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
+token=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
 
 [defaults]
 url=https://sentry.io/
