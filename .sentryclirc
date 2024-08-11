@@ -2,5 +2,6 @@
 token=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
 
 [defaults]
+url=https://sentry.io/
 org=javascript-mastery-mz
-project=javascript-nextjs
+project=4507732105035856
